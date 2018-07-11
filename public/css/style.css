@@ -1,0 +1,280 @@
+@font-face {
+    font-family: SierraMadre;
+    src: url(fonts/SierraMadre.otf);
+}
+
+body {
+    margin: 0;
+    font-family:SierraMadre, sans-serif;
+    min-height: 100vh;
+    /*display: grid;*/
+    grid-template-rows: auto 1fr auto;
+    background: #CD853F;
+    background-image: url("background.jpg");
+
+    background-repeat: no-repeat;
+}
+
+nav {
+    background-color: #A0522D;
+    color: silver;
+}
+
+#navbar {
+    text-align: center;
+}
+
+.anchor {
+    background-color: #600000;
+    cursor: pointer;
+    padding: 1em;
+    display: block;
+    text-align: right;
+}
+
+#anchor {
+    display: none;
+}
+
+#anchor:checked ~ ul a {
+    font-size: 1em;
+    height: 1em;
+    line-height: 1em;
+    transform: scaleY(1);
+    border-bottom: 1px solid #CD853F;
+}
+
+#anchor:checked ~ .anchor .fa-anchor {
+    display: block;
+}
+
+#anchor:checked ~ .anchor .fa-ship {
+    display: none;
+}
+
+/* Lower the Anchor */
+.fa-anchor {
+    display: none;
+}
+
+
+
+nav ul {
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    color: silver;
+    text-decoration: none;
+    padding: 1em;
+    border-bottom: 0 solid #eee;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    transform: scaleY(0);
+    transition: all 0.7s ease-out;
+}
+
+nav a:hover {
+    color: whitesmoke;
+    background-color: #800000;
+}
+
+.stairs ul{
+    padding-left: .5em;
+    border-left: 5px solid #800000;
+}
+
+.stairs ul li{
+    padding-left: 3px;
+}
+.stairs > a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+/* close staircase */
+#ship .stairs li a {
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    transform: scaleY(0);
+    border-bottom-width: 0;
+    transition: all 0.5s ease-out;
+}
+
+#ship .stairs:hover li a {
+    font-size: 1em;
+    height: 1em;
+    line-height: 1em;
+    transform: scaleY(1);
+    border-bottom-width: 1px;
+    border-bottom-color: #CD853F ;
+}
+
+.stairs > a::after{
+    font-family: "Font Awesome\ 5 Free";
+    font-weight: 900;
+    content: "\f0d7";
+}
+
+.stairs:hover > a::after {
+    content: "\f150";
+}
+
+main {
+    padding: 1em;
+    height: 80vh;
+}
+
+footer {
+    padding: 1em;
+    background: #333;
+    color: #ddd;
+    display: grid;
+    grid-template-columns: 1fr auto ;
+}
+
+@media screen and (min-width: 40em) {
+    nav>ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    }
+    .anchor {
+        display: none;
+    }
+    nav a {
+        font-size: 1em;
+        height: 1em;
+        line-height: 1em;
+        transform: scaleY(1);
+    }
+
+    .stairs {
+        position: relative;
+    }
+
+    .stairs ul {
+        position: absolute;
+        border-left: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .stairs a {
+        background-color: #A0522D;
+    }
+
+    nav>ul>li:not(:first-child)>a {
+        border-left: 3px solid #CD853F;
+    }
+}
+
+/*====================================NEWS=======================================*/
+
+.news-head {
+    margin: 0 auto;
+    text-align: center;
+    max-height: 50%;
+}
+
+.smarty-article {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 20px;
+    max-width: 80vw;
+    border-bottom: 2px #800000 solid;
+}
+
+.news-pagination {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 50%;
+}
+
+.news-pagination .news-previous {
+    float: left;
+}
+
+.news-pagination .news-next {
+    float: right;
+}
+
+/*====================================INFO==========================================*/
+.info-wrapper{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.info-txt-1 {
+    margin: 0 auto;
+    max-width: 75vw;
+}
+
+/*====================================CMS MAIN======================================*/
+
+.cms-h4-top {
+    display: inline-block;
+}
+
+/*====================================CMS INFO=======================================*/
+
+.cms-info-content-view {
+    margin: 0 auto;
+    max-width: 45vw;
+    padding-right: 60%;
+    padding-top: 2em;
+}
+
+.cms-live-content-info {
+    border: solid;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+/*===================================CMS MUSIC========================================*/
+
+.cms-music-wrapper div {
+    display: block;
+}
+
+.cms-events {
+    width: 45vw;
+    float: left;
+}
+
+.cms-songs {
+    width: 45vw;
+    float: right;
+}
+
+.cms-music-add {
+    padding-bottom: 2em;
+}
+
+.cms-single-event-holder, .cms-single-song-holder, .cms-smarty-article {
+    border: solid;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.cms-smarty-article {
+    width: 50vw;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+.swing-head, .rock-head, .retro-head {
+    text-align: center;
+}
