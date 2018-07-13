@@ -13,11 +13,11 @@
     {/foreach}
 <div class="news-pagination">
     {if $current_page gt 1}
-        <a href="index.php?page=news&pagenumber={$current_page - 1}" class="news-previous">Grevious Page</a>
+        <h3><a href="index.php?page=news&pagenumber={$current_page - 1}" class="news-previous">Grevious Page</a></h3>
     {/if}
 
     {if $current_page lt $number_of_pages}
-        <a href="index.php?page=news&pagenumber={$current_page + 1}" class="news-next">Nextus Page</a>
+        <h3><a href="index.php?page=news&pagenumber={$current_page + 1}" class="news-next">Nextus Page</a></h3>
     {/if}
 </div>
 
