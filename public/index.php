@@ -125,6 +125,6 @@
         case 'swing' : swing_action(); break;
         case 'rock' : rock_action(); break;
         case 'retro' : retro_action(); break;
-        default: page_not_found_action(); break;
+
     }
 

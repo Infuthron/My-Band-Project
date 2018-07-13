@@ -6,7 +6,7 @@
         <h4>Genre: {$song[1]}</h4>
         <h5>Aditional info:</h5>
         <p>{$song[3]}</p>
-        <a href="{$song[5]}" target="_blank">Clicc for song</a>
+        <a href="{$song[5]}" target="_blank">Click for song</a>
     </div>
 {/foreach}
 <h1 class="swing-bottom">Upcoming swing events</h1>
