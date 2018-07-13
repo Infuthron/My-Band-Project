@@ -506,3 +506,78 @@ function admin_cookie() {
         admin_action(); ///TO CHANGE
     }
 }
+
+//========================================RETRO-MUSIC=================================================
+
+function get_music ($kind) {
+    $mysqli = make_connection();
+    $query = "SELECT * FROM music WHERE song_kind LIKE '$kind'";
+    $stmt = $mysqli->prepare($query) or die ('Error preparing getting retro');
+    $stmt->bind_result($song_id, $song_kind, $song_name, $song_info, $song_autor, $song_yt_link);
+    $stmt->execute() or die ('Error executing getting retro');
+    $results = array();
+    while ($stmt->fetch()) {
+        $retro = array();
+        $retro[] = $song_id;
+        $retro[] = $song_kind;
+        $retro[] = $song_name;
+        $retro[] = $song_info;
+        $retro[] = $song_autor;
+        $retro[] = $song_yt_link;
+        $results[] = $retro;
+    }
+    return $results;
+
+}
+
+function get_festivals($kind) {
+    $mysqli = make_connection();
+    $query = "SELECT * FROM events WHERE event_kind LIKE '$kind'";
+    $stmt = $mysqli->prepare($query) or die ('Error preparing getting festivals');
+    $stmt->bind_result($event_id, $event_kind, $event_name, $event_location, $event_day, $event_month, $event_year, $ticker_price, $event_info) or die ('Error binidng festivals');
+    $stmt->execute() or die ('Error executing getting festivals');
+    $results = array();
+    while ($stmt->fetch()) {
+        $festival = array();
+        $festival[] = $event_id ;
+        $festival[] = $event_kind;
+        $festival[] = $event_name;
+        $festival[] = $event_location;
+        $festival[] = $event_day;
+        $festival[] = $event_month;
+        $festival[] = $event_year;
+        $festival[] = $ticker_price;
+        $festival[] = $event_info;
+        $results[] = $festival;
+    }
+    return $results;
+}
+
+/*function select_news_to_edit($id) {
+    $mysqli = make_connection();
+    $query = "SELECT * FROM news_articles WHERE article_id = $id";
+    $stmt = $mysqli->prepare($query) or die ('Error preparing getting news to edit');
+    $stmt->bind_result($id, $news_title, $news_content, $news_link);
+    $stmt->execute() or die ('Error executing getting news to edit');
+    $results = array();
+    while ($stmt->fetch()) {
+        $news_to_edit = array();
+        $news_to_edit[] = $id;
+        $news_to_edit[] = $news_title;
+        $news_to_edit[] = $news_content;
+        $news_to_edit[] = $news_link;
+        $results = $news_to_edit;
+    }
+    return $results;
+}*/
+
+
+
+
+
+
+
+
+
+
+

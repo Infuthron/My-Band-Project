@@ -11,7 +11,7 @@ body {
     grid-template-rows: auto 1fr auto;
     background: #CD853F;
     background-image: url("background.jpg");
-
+    background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
@@ -203,6 +203,13 @@ footer {
     float: right;
 }
 
+.search-field {
+    text-align: center;
+}
+
+.search-field input {
+    margin: 1em;
+}
 /*====================================INFO==========================================*/
 .info-wrapper{
     text-align: center;
@@ -275,6 +282,24 @@ th, td {
     text-align: left;
 }
 
+/*========================================MUSIC PAGES====================================*/
+
 .swing-head, .rock-head, .retro-head {
+    text-align: center;
+}
+
+.swing-bottom {
+    text-align: center;
+}
+
+.swing-songs, .rock-songs, .retro-songs, .swing-events, .rock-events, .retro-events {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 20px;
+    max-width: 80vw;
+    border-bottom: 2px #800000 solid;
+}
+
+.home-desc, .home-head {
     text-align: center;
 }

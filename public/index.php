@@ -97,27 +97,31 @@
 
     //===========PAGES
 
+    if (isset($_SESSION['loggedin'])) {
+        switch ($page) {
+            case 'cms' : cms_action(); break;
+            case 'cms_info': cms_info_action(); break;
+            case 'cms_music' : cms_music_action(); break;
+            case 'cms_news' : cms_news_action(); break;
+            case 'cms_edit_info' : cms_edit_info_action(); break;
+            case 'cms_edit_event' : cms_edit_event_action(); break;
+            case 'cms_edit_song' : cms_edit_song_action(); break;
+            case 'cms_edit_news' : cms_edit_news_action(); break;
+            case 'cms_add_info' : cms_add_info_action(); break;
+            case 'cms_add_song' : cms_add_song_action(); break;
+            case 'cms_add_event' : cms_add_event_action(); break;
+            case 'cms_add_news' : cms_add_news_action(); break;
+        }
+    }
     switch ($page) {
         case 'home': homepage_action(); break;
         case 'news': news_action(); break;
         case 'search': search_action(); break;
         case 'admin' : admin_action(); break;
-        case 'cms' : cms_action(); break;
         case 'no_post'  : no_post_action(); break;
         case 'no_info' : no_info_action(); break;
         case 'no_fetch' : no_fetch_action(); break;
         case 'info' : info_action(); break;
-        case 'cms_info': cms_info_action(); break;
-        case 'cms_music' : cms_music_action(); break;
-        case 'cms_news' : cms_news_action(); break;
-        case 'cms_edit_info' : cms_edit_info_action(); break;
-        case 'cms_edit_event' : cms_edit_event_action(); break;
-        case 'cms_edit_song' : cms_edit_song_action(); break;
-        case 'cms_edit_news' : cms_edit_news_action(); break;
-        case 'cms_add_info' : cms_add_info_action(); break;
-        case 'cms_add_song' : cms_add_song_action(); break;
-        case 'cms_add_event' : cms_add_event_action(); break;
-        case 'cms_add_news' : cms_add_news_action(); break;
         case 'swing' : swing_action(); break;
         case 'rock' : rock_action(); break;
         case 'retro' : retro_action(); break;

@@ -17,3 +17,12 @@
         <li><a href="index.php?page=info">Info</a></li>
     </ul>
 </nav>
+<div class="search-field">
+    <form method="get" action="index.php">
+        <input type="hidden" name="page" value="news">
+        <label>Search for news:<br>
+            <input type="text" name="searchterm">
+        </label><br>
+        <input type="submit" name="submit" value="search">
+    </form>
+</div>

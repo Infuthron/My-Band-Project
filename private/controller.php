@@ -67,7 +67,12 @@ function info_action() {
 function swing_action() {
     global $smarty;
     //MODEL
+    $kind = 'swing';
+    $swing_songs = get_music($kind);
+    $smarty->assign('songs', $swing_songs);
 
+    $swing_events = get_festivals($kind);
+    $smarty->assign('events', $swing_events);
 
     //VIEWS
     $smarty->display('header.tpl');
@@ -79,7 +84,12 @@ function swing_action() {
 function rock_action() {
     global $smarty;
     //MODEL
+    $kind = 'swing';
+    $rock_songs = get_music($kind);
+    $smarty->assign('songs', $rock_songs);
 
+    $rock_events = get_festivals($kind);
+    $smarty->assign('events', $rock_events);
 
     //VIEWS
     $smarty->display('header.tpl');
@@ -91,7 +101,12 @@ function rock_action() {
 function retro_action() {
     global $smarty;
     //MODEL
+    $kind = 'retro';
+    $retro_songs = get_music($kind);
+    $smarty->assign('songs', $retro_songs);
 
+    $retro_events = get_festivals($kind);
+    $smarty->assign('events', $retro_events);
 
     //VIEWS
     $smarty->display('header.tpl');
